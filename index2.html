@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Page</title>
+</head>
+<style>
+  #pword{
+    opacity: 0;
+  }
+</style>
+
+<body>
+  <h2>Enter Password</h2>
+<div>
+  <input type="text" id="passwordInput" placeholder="Enter password">
+  <button onclick="checkPassword()">Submit</button>
+</div>
+  <div>
+  <button style="margin-top: 16px;" ondblclick="window.location.href = 'index.html';">pwordset</button>
+</div>
+  <p id="pword">here</p>
+  <script>
+    function checkPassword() {
+      var storedPassword = localStorage.getItem('password');
+      var userInput = document.getElementById('passwordInput').value;
+      if (userInput === storedPassword) {
+        window.location.href = 'index11.html';
+      } else {
+        alert('Incorrect password. Please try again.');
+      }
+    // }document.getElementById("pword").innerHTML = ("am a hero");
+    }document.getElementById("pword").innerHTML = localStorage.getItem('password');
+  </script>
+</body>
+</html>
